@@ -1,21 +1,21 @@
-#Some useful commands for create the topology using physic SDN switch
+# Some useful commands for create the topology using physic SDN switch
 
-##Topology:
+## Topology
 ```
 http://www.topology-zoo.org/maps/Packetexchange.jpg
 ```
 
-##Assign the IP for SDN switch:
+## Assign the IP for SDN switch
 ```
 dhclient -v eth0
 ```
 
-##Restart service:
+## Restart service
 ```
 service picos restart
 ```
 
-##Delete bridge:
+## Delete bridge
 ```
 ovs-vsctl del-br sw1
 ovs-vsctl del-br sw2
@@ -31,7 +31,7 @@ ovs-vsctl del-br sw11
 ovs-vsctl del-br sw12
 ```
 
-##Create physical node in SDN switch:
+## Create physical node in SDN switch
 ```
 ovs-vsctl  add-br sw1 -- set bridge sw1 datapath_type=pica8 
 ovs-vsctl  add-port sw1 ge-1/1/1 vlan_mode=access -- set Interface ge-1/1/1 type=pica8
@@ -136,7 +136,7 @@ ovs-vsctl  set-controller sw12 tcp:10.12.20.158:6633
 ovs-vsctl  set bridge sw12 protocol=OpenFlow10
 ```
 
-##List all controllers and status:
+## List all controllers and status
 ```
 ovs-vsctl list controller
 ```
